@@ -1,3 +1,4 @@
+//import hogsData from './porkers_Data'; // Correct casing matters
 const hogs = [
   {
     name: "Babe",

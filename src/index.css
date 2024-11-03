@@ -150,3 +150,78 @@ ul {
     transform: rotate(360deg);
   }
 }
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.headerText {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.navWrapper {
+  margin-bottom: 20px;
+}
+
+.hog-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 50px;
+  padding: 50px;
+  background-color: #fff;
+}
+
+.details {
+  margin-top: 10px;
+}
+.button-container {
+  padding: 2px;
+  margin: auto;
+}
+
+.button {
+  margin: 5px;
+  padding: 10px;
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #e67e22;
+}
+
+.more-details {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.greased {
+  color: green;
+}
+.hog-image {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hog-image:hover {
+  transform: scale(1.05);
+}
+
+.description {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.description strong {
+  color: #333;
+}
+
