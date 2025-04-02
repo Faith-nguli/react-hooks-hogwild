@@ -1,227 +1,308 @@
+/* Base Styles */
+:root {
+  --primary-color: #FF6B6B;
+  --secondary-color: #4ECDC4;
+  --accent-color: #FFE66D;
+  --dark-color: #292F36;
+  --light-color: #F7FFF7;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
 }
 
 .App {
-  margin: 0% 5% 0% 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
   text-align: center;
 }
 
-.TwirlyPig {
-  transition: all 3s ease-in-out;
-  display: inline;
-}
-
-.TwirlyPig:hover {
-  transform: scale(1.5);
-}
-
-.navWrapper {
-  margin-bottom: 2%;
-}
-
-.filterWrapper {
-  margin: 2% 0% 2% 0%;
-}
-
+/* Header Styles */
 .headerText {
-  color: #F5A9BC;
-  font-size: 3em;
-  margin: 0% 2% 0% 2%;
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .largeHeader {
-  font-size: 3.5em;
-  font-weight: bold;
-  color: #3B0B0B;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--dark-color);
+  margin-bottom: 1.5rem;
 }
 
 .smallHeader {
-  font-size: 1.75em;
-  font-weight: bold;
-  color: #3B0B0B;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 1rem;
 }
 
-.normalText {
-  font-family: Georgia, serif;
-  font-size: .75em;
+/* Filter Component */
+.filterWrapper {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow);
 }
 
-.hoggyText {
-  font-size: 1.5em;
+.ui.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 0;
 }
 
-.achievementText {
-  color: purple;
+.ui.item {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-ul {
-  list-style-type: none;
-  list-style: none;
-}
-
-.normalText ul {
-  font-family: Georgia, serif;
-  font-size: .75em;
-  text-align: left;
-}
-
-.subtleText {
-  color: #D1D1D1;
-  font-size: .75em;
-}
-
-
-.indexWrapper {
-  margin: auto;
-}
-
-
-.pigTile {
-  display: inline;
-  background-repeat: no-repeat;
-  background-position: center 90%;
-  float: left;
-  margin: 2%;
-  padding: 1%;
-  outline: #3B0B0B dotted thick;
-  transition: 0.75s;
-  opacity: 1;
-}
-
-.minBackgroundSneak {
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  background-size: cover;
-  z-index: -3;
-}
-
-.maxBackgroundSneak {
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  background-size: cover;
-  z-index: -3;
-  opacity: 0.75;
-}
-
-.pigTile h3 {
-  color: #FBB;
-}
-
-.minPigTile {
-  width: 250px;
-  height: 250px;
-  background-size: cover;
-}
-
-.maxPigTile {
-  background-size: cover;
-  width: 500px;
-  height: 500px;
-}
-
-.pigTile:hover {
-  transform: scale(1.05);
-}
-
-
-.App-logo {
-  animation: App-logo-spin infinite 5s linear;
-  height: 80px;
-  transition: all .2s ease-in-out;
-}
-
-.footer {
-  padding: 1%;
-  clear: both;
-}
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.App {
-  text-align: center;
-  padding: 20px;
-}
-
-.headerText {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.navWrapper {
-  margin-bottom: 20px;
-}
-
-.hog-card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin: 50px;
-  padding: 50px;
-  background-color: #fff;
-}
-
-.details {
-  margin-top: 10px;
-}
-.button-container {
-  padding: 2px;
-  margin: auto;
-}
-
-.button {
-  margin: 5px;
-  padding: 10px;
-  background-color: #f39c12;
-  color: white;
-  border: none;
+.ui.selection.dropdown {
+  min-width: 120px;
   border-radius: 5px;
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: #e67e22;
-}
-
-.more-details {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: #555;
-}
-
-.greased {
-  color: green;
-}
-.hog-image {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.hog-image:hover {
-  transform: scale(1.05);
-}
-
-.description {
-  background-color: #f9f9f9;
   border: 1px solid #ddd;
+  padding: 0.5rem;
+  background-color: white;
+}
+
+.ui.toggle.checkbox {
+  transform: scale(1.2);
+}
+
+/* Add Hog Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(78, 205, 196, 0.2);
+}
+
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+/* Hog Card Styles */
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  background-color: white;
+  margin-bottom: 2rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--dark-color);
+}
+
+.card-text {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+/* Button Styles */
+.button-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-show-details {
+  background-color: var(--accent-color);
+  color: var(--dark-color);
+}
+
+.btn-show-details:hover {
+  background-color: #ffdb4d;
+}
+
+.btn-hide-hog {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-hide-hog:hover {
+  background-color: #ff5252;
+}
+
+.btn-submit {
+  background-color: var(--secondary-color);
+  color: white;
+  margin-top: 1rem;
+}
+
+.btn-submit:hover {
+  background-color: #3dbeb6;
+}
+
+/* Hog Details */
+.description {
+  background-color: #f8f9fa;
   border-radius: 8px;
-  padding: 10px;
-  margin-top: 10px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  text-align: left;
+  border-left: 4px solid var(--secondary-color);
 }
 
 .description strong {
-  color: #333;
+  color: var(--dark-color);
 }
 
+.description p {
+  margin-bottom: 0.5rem;
+}
+
+.greased {
+  color: #28a745;
+  font-weight: 600;
+}
+
+/* Responsive Grid */
+.hog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .headerText {
+    font-size: 2rem;
+  }
+  
+  .largeHeader {
+    font-size: 2.5rem;
+  }
+  
+  .ui.menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .hog-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .button-container {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerText {
+    font-size: 1.75rem;
+  }
+  
+  form {
+    padding: 1.5rem;
+  }
+  
+  .card-img-top {
+    height: 200px;
+  }
+}
